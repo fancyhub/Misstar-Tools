@@ -25,8 +25,10 @@ echo "欢迎使用小米路由Misstar Tools工具箱"
 echo "当前版本：2.17.05.21"
 echo "问题反馈&技术交流QQ群：523723125/157558789"
 
-## Check The Router Hardware Model 
+## Check The Router Hardware Model   
 model=$(cat /proc/xiaoqiang/model)
+url="https://raw.githubusercontent.com/monlor/Misstar-Tools/master/appstore/$model"
+echo $url
 
 if [ "$model" == "R2D" -o "$model" == "R1D" -o "$model" == "R3D" -o "$model" == "R3P" -o "$model" == "R3" -o "$model" == "R1CM" -o "$model" == "R3G" ];then
 	echo "本工具箱作折腾、学习、研究之用，请勿用于非法用途，对路由器安全有高要求的请不要安装！"
@@ -97,7 +99,9 @@ fi
 
 echo "开始下载安装包..."
 
-url="https://raw.githubusercontent.com/monlor/Misstar-Tools/master/appstore/$model"
+
+
+
 
 curl -kL ${url}/misstar.mt -o /tmp/misstar.mt
 
